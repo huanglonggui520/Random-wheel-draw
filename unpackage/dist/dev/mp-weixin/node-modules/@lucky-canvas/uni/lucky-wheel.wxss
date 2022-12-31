@@ -1,0 +1,28 @@
+
+.lucky-box.data-v-a0d692a4 {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.lucky-box canvas.data-v-a0d692a4 {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+}
+.lucky-wheel-btn.data-v-a0d692a4 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.lucky-imgs.data-v-a0d692a4 {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+

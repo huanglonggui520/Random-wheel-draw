@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "大转盘",
+  "usingComponents": {
+    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "lucky-wheel": "/node-modules/@lucky-canvas/uni/lucky-wheel"
+  }
+}

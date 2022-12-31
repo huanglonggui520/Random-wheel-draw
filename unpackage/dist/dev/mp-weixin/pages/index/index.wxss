@@ -1,0 +1,20 @@
+
+.setbtn{
+	width: 200rpx;
+	font-size: 35rpx;
+	background-color: #EE3E90;
+	padding: 15rpx 60rpx;
+	color: #fff;
+	border-radius: 50rpx;
+}
+.set{
+	/* width: 100%; */
+	/* background-color: red; */
+	margin-top: 5rpx;
+	height: 50rpx;
+	display: flex;
+	padding-right: 20rpx;
+	padding-left: 20rpx;
+	justify-content: space-between;
+}
+
