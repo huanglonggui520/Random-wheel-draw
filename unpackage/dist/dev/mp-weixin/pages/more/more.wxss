@@ -1,0 +1,8 @@
+
+.list{
+	width: 46%;
+	height: 250rpx;
+	background-color: red;
+	border-radius: 10rpx;
+}
+

@@ -6,7 +6,7 @@
 		</view>
 		<view style="background-color: #fff;">
 			<u-cell-group>
-				<u-cell title="应用主题" :isLink="true"></u-cell>
+				<u-cell title="应用主题" :isLink="true" @click='gochoicebg'></u-cell>
 				<u-cell title="转盘触感">
 					<u-switch slot="right-icon" @change='changezdong' size='20' inactiveColor='#F3F3F3'
 						activeColor='#FF9900' v-model="zdong"></u-switch>
@@ -16,7 +16,7 @@
 						activeColor='#FF9900' v-model="cfu"></u-switch>
 				</u-cell>
 				<u-cell title="语音播报">
-					<u-switch slot="right-icon" size='20' inactiveColor='#F3F3F3' activeColor='#FF9900' v-model="sy">
+					<u-switch slot="right-icon" @change='setvoice' size='20' inactiveColor='#F3F3F3' activeColor='#FF9900' v-model="sy">
 					</u-switch>
 				</u-cell>
 			</u-cell-group>
@@ -35,13 +35,19 @@
 </template>
 
 <script>
+	import {mapState} from 'vuex'
 	export default {
 		data() {
 			return {
-				zdong: uni.getStorageSync('zdong'),
-				cfu: uni.getStorageSync('cfu'),
-				sy:uni.getStorageSync('sy')
+				zdong: true,
+				cfu: true,
+				sy:true
 			}
+		},
+		onLoad() {
+		    this.zdong=this.$store.state.zdong
+			this.cfu=this.$store.state.cfu
+			this.sy=this.$store.state.voice
 		},
 		methods: {
 
@@ -51,13 +57,18 @@
 				})
 			},
 			changecfu(value) {
-				console.log(value);
-				uni.$emit('getset', value)
-				uni.setStorageSync('cfu', value)
+				this.$store.commit('SETCFU',value)
 			},
 			changezdong(value) {
-				uni.$emit('getsetzdong', value)
-				uni.setStorageSync('zdong',value)
+				this.$store.commit('SETZDONG',value)
+			},
+			gochoicebg(){
+				uni.navigateTo({
+					url:'/pages/choicebg/choicebg'
+				})
+			},
+			setvoice(){
+				this.$store.commit('SETVOICE',this.sy)
 			}
 		}
 	}

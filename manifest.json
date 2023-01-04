@@ -55,8 +55,16 @@
             "urlCheck" : false,
             "es6" : true
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+		"plugins" : {
+		   "WechatSI" : {
+		        "version" : "0.0.7",
+		        "provider" : "wx069ba97219f66d99"
+		    }
+		}
     },
+	
+
     "mp-alipay" : {
         "usingComponents" : true
     },

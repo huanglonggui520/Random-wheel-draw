@@ -12,9 +12,25 @@
 	/* background-color: red; */
 	margin-top: 5rpx;
 	height: 50rpx;
+	padding-top: 10rpx;
 	display: flex;
 	padding-right: 20rpx;
 	padding-left: 20rpx;
 	justify-content: space-between;
+}
+.index{
+	overflow: hidden;
+	width: 100%;
+	min-height: 100vh;
+	/* padding-bottom: ; */
+	/* background-repeat:repeat-y; */
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+.indexbj2{
+	background-image: url('https://pic.imgdb.cn/item/63b04a972bbf0e7994641e9e.jpg');
+}
+.indexbj1{
+	background-image: url('https://pic.imgdb.cn/item/63b04ef42bbf0e799469e562.jpg');
 }
 

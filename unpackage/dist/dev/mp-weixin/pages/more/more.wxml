@@ -1,1 +1,1 @@
-<view>mor</view>
+<view style="padding:15rpx;display:flex;justify-content:space-around;"><view data-event-opts="{{[['tap',[['godice',['$event']]]]]}}" class="list" bindtap="__e"></view><view data-event-opts="{{[['tap',[['gofinger',['$event']]]]]}}" class="list" bindtap="__e"></view><view data-event-opts="{{[['tap',[['gocs',['$event']]]]]}}" class="list" bindtap="__e"></view></view>

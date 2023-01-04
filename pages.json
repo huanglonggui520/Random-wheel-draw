@@ -7,6 +7,7 @@
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "大转盘"
+				
 			}
 		}
 	    ,{
@@ -25,6 +26,71 @@
                 "navigationBarTitleText": "设置",
                 "enablePullDownRefresh": false
 				
+            }
+            
+        }
+        ,{
+            "path" : "pages/choicebg/choicebg",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "应用主题",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/list/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "转盘列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/add/add",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "新建转盘",
+                "enablePullDownRefresh": false
+				
+            }
+            
+        }
+        ,{
+            "path" : "pages/dice/dice",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"disableScroll": true
+            }
+        }
+        ,{
+            "path" : "pages/diceSet/diceSet",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "骰子设置",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/finger/finger",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"disableScroll": true,"navigationStyle": "custom"
+            }
+            
+        }
+        ,{
+            "path" : "pages/cs/cs",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
             }
             
         }
@@ -47,10 +113,10 @@
 			}]
 	},
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#232E80",
+		"backgroundColor": "#232E80"
 	},
 	"uniIdRouter": {}
 }

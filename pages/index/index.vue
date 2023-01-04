@@ -1,14 +1,17 @@
 <template>
-	<view>
+	<view class="index" :class="theme?'indexbj1':'indexbj2'">
+		
 		<view class="set">
-			<uni-icons type="gear" size="26" @click="goset"></uni-icons>
-			<uni-icons type="compose" size="26"></uni-icons>
+			
+			<uni-icons type="gear" color="#fff" size="26" @click="goset"></uni-icons>
+			<uni-icons type="compose" color="#fff" size="26" @click="golist"></uni-icons>
+			
 		</view>
 		<view style="width: 100%;text-align: center;margin-top: 20rpx;margin-bottom: 40rpx;">
-			<text style="color: #878A87;font-size: 45rpx;">晚上吃什么?</text>
+			<text style="color: #EBE6E6;font-size: 45rpx;">{{defaut.title}}</text>
 		</view>
 		<view style="width: 100%;text-align: center;margin-bottom: 80rpx;">
-			<text style="font-size: 35rpx;color:#288FF5;padding: 10rpx 20rpx 10rpx 20rpx;border-radius: 15rpx;">{{result}}</text>
+			<text style="font-size: 40rpx;color:#D81E06;padding: 10rpx 20rpx 10rpx 20rpx;border-radius: 15rpx;">{{result}}</text>
 		</view>
 	    <LuckyWheel
 	      ref="myLucky"
@@ -29,8 +32,15 @@
 </template>
 
 <script>
+	// #ifdef  MP-WEIXIN
+	var plugin = requirePlugin("WechatSI")
+	let manager = plugin.getRecordRecognitionManager()
+	// #endif
+	
+	
 	import LuckyWheel from '@lucky-canvas/uni/lucky-wheel'
-	let that
+	import {mapState} from 'vuex'
+	let a=110
 	// import uni-icons from '@/uni_modules/uni-icons/components/uni-icons/uni-icons.vue'
 	import colors from '../../utools/color.js'
 	  export default {
@@ -39,9 +49,8 @@
 	      return {
 			  numbers:[],
 			  result:'准备中...',
+			  
 			  sjindex:null,
-			  zdong:true,
-			  cfu:true,
 			  count:0,
 			defaultConfig: {
 			        stopRange: 0.9,
@@ -54,13 +63,7 @@
 				fontColor:'#fff'
 			},
 	        blocks: [{ padding: '13px', background: '#ECECF1'}],
-	        prizes: [
-	          {index:0, fonts: [{ text: '大白菜', top: '20%',lengthLimit:'70%' }], background: colors[0],range:10 },
-	          { index:1,fonts: [{ text: '火锅', top: '10%' }], background: colors[1],range:10 },
-	          { index:2,fonts: [{ text: '汉堡', top: '10%' }], background: colors[2],range:10 },
-	          { index:3,fonts: [{ text: '白米饭', top: '10%' }], background: colors[3] ,range:10},
-			  { index:3,fonts: [{ text: '烤串', top: '10%' }], background: colors[4] ,range:10},
-	        ],
+	        prizes: [],
 			prize:[],
 	        buttons: [
 				{
@@ -74,29 +77,62 @@
 	        ],
 	      }
 	    },
+		computed:{
+			// ...mapState(['cfu'])
+			...mapState(['cfu','zdong','theme','defaut','voice']),
+		},
+		watch:{
+		    defaut(){
+				console.log('变量');
+				this.prizes=this.defaut.prizes
+			}	
+		},
 		onLoad() {
+			// var plugin = requirePlugin("WechatSI")
+			// let manager = plugin.getRecordRecognitionManager()
 			
-			console.log(uni.getStorageSync('cfu'));
-			uni.setStorageSync('cfu',true)
-			uni.setStorageSync('zdong',true)
-			uni.setStorageSync('sy',true)
-			uni.$on('getset',(value)=>{
-				console.log('cc',value);
-				this.cfu=value
-			})
-			uni.$on('getsetzdong',(value)=>{
-				this.zdong=value
-			})
+            this.$store.commit('SETDICEVOICE',true)
+			console.log(this.$store.state);
+			this.$store.commit('UNISETLIST',uni.getStorageSync('lists')?uni.getStorageSync('lists'):[])
+			console.log(uni.getStorageSync('lists'));
+			
+			this.prizes=this.defaut.prizes
+			
 			// this.prizes.push({index:0, fonts: [{ text: '高兴', top: '20%',lengthLimit:'70%' }], background: colors[0],range:10 },)
 		},
 	    methods: {
 		  say(){
-			        const synth = window.speechSynthesis
-			        const msg = new SpeechSynthesisUtterance()
-			        msg.text = this.result
-			        msg.lang = 'zh-CN'
-			        synth.speak(msg)
+			        console.log(a);
+			        let _this = this;
+			        plugin.textToSpeech({
+			            lang: "zh_CN",
+			            tts: true,
+			            content: this.result,
+			            success: function(res) {
+			        		_this.pay = true
+			                // let _this = this;
+			                _this.innerAudioContext = uni.createInnerAudioContext();
+			                _this.innerAudioContext.src = res.filename
+			                _this.innerAudioContext.play()
+			                _this.innerAudioContext.onPlay(() => {
+			                  console.log('开始播放');
+			                });
+			                _this.innerAudioContext.onEnded(() => {
+			                  console.log('播放结束');
+			                  _this.pay = false
+			                });
 			        
+			            },
+			            fail: function(res) {
+			                console.log("fail tts", res)
+			            }
+			        })
+			        
+		  },
+		  golist(){
+			uni.navigateTo({
+				url:'/pages/list/list'
+			})  
 		  },
 		  setbtn(){
 			  
@@ -168,7 +204,14 @@
 				},200)
 				
 			}
-			this.say()
+			// 是否播放结果
+			// #ifdef  MP-WEIXIN
+			if(this.voice){
+				this.say()
+			}
+			// #endif
+			
+			
 			// this.$forceUpdate()
 			// this.$set(this.prizes[this.sjindex],'background','#CAC5C7')
 	        console.log(prize.fonts[0].text)
@@ -191,9 +234,25 @@
 		/* background-color: red; */
 		margin-top: 5rpx;
 		height: 50rpx;
+		padding-top: 10rpx;
 		display: flex;
 		padding-right: 20rpx;
 		padding-left: 20rpx;
 		justify-content: space-between;
+	}
+	.index{
+		overflow: hidden;
+		width: 100%;
+		min-height: 100vh;
+		/* padding-bottom: ; */
+		/* background-repeat:repeat-y; */
+		background-size:100% 100%;
+		background-repeat:no-repeat;
+	}
+	.indexbj2{
+		background-image: url('https://pic.imgdb.cn/item/63b04a972bbf0e7994641e9e.jpg');
+	}
+	.indexbj1{
+		background-image: url('https://pic.imgdb.cn/item/63b04ef42bbf0e799469e562.jpg');
 	}
 </style>

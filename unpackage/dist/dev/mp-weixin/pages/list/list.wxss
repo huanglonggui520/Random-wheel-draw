@@ -1,0 +1,18 @@
+
+.add{
+	background-color: #232E80;
+	color: #fff;
+	font-size: 110rpx; 
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	position: fixed;
+	bottom: 60rpx;
+	right: 60rpx;
+	text-align: center;
+	line-height: 100rpx;
+}
+.defaut{
+	background-color: #8DC2F7 !important;
+}
+

@@ -2,14 +2,21 @@
   "pages": [
     "pages/index/index",
     "pages/more/more",
-    "pages/set/set"
+    "pages/set/set",
+    "pages/choicebg/choicebg",
+    "pages/list/list",
+    "pages/add/add",
+    "pages/dice/dice",
+    "pages/diceSet/diceSet",
+    "pages/finger/finger",
+    "pages/cs/cs"
   ],
   "subPackages": [],
   "window": {
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarBackgroundColor": "#232E80",
+    "backgroundColor": "#232E80"
   },
   "tabBar": {
     "color": "#7A7E83",
@@ -31,6 +38,11 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap50.json"
+  "plugins": {
+    "WechatSI": {
+      "version": "0.0.7",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "usingComponents": {}
 }

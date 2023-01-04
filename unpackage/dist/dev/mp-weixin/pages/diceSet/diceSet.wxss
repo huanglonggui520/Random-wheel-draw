@@ -1,0 +1,6 @@
+
+.choice{
+	width: 500rpx;
+	height: 40rpx;
+}
+
