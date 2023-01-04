@@ -6,4 +6,4 @@
 
 ![默认转盘](https://pic.imgdb.cn/item/63b5b04dbe43e0d30eb60673.jpg)
 
-![](https://pic.imgdb.cn/item/63b5b226be43e0d30eb9047d.jpg)
+![自定义转盘](https://pic.imgdb.cn/item/63b5b226be43e0d30eb9047d.jpg)
