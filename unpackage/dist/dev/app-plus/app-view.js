@@ -1712,33 +1712,32 @@ var render = function() {
       attrs: { _i: 0 }
     },
     [
-      _c("uni-view", {
-        staticClass: _vm._$g(1, "sc"),
-        attrs: { _i: 1 },
-        on: {
-          click: function($event) {
-            return _vm.$handleViewEvent($event)
+      _c(
+        "uni-view",
+        {
+          staticClass: _vm._$g(1, "sc"),
+          attrs: { _i: 1 },
+          on: {
+            click: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
           }
-        }
-      }),
-      _c("uni-view", {
-        staticClass: _vm._$g(2, "sc"),
-        attrs: { _i: 2 },
-        on: {
-          click: function($event) {
-            return _vm.$handleViewEvent($event)
+        },
+        [_vm._v("掷骰子")]
+      ),
+      _c(
+        "uni-view",
+        {
+          staticClass: _vm._$g(2, "sc"),
+          attrs: { _i: 2 },
+          on: {
+            click: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
           }
-        }
-      }),
-      _c("uni-view", {
-        staticClass: _vm._$g(3, "sc"),
-        attrs: { _i: 3 },
-        on: {
-          click: function($event) {
-            return _vm.$handleViewEvent($event)
-          }
-        }
-      })
+        },
+        [_vm._v("金手指")]
+      )
     ],
     1
   )

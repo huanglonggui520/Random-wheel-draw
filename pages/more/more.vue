@@ -1,14 +1,14 @@
 <template>
 	<view style="padding: 15rpx;display: flex;justify-content: space-around">
 		<view class="list"@click='godice'>
-			
+			掷骰子
 		</view>
 		<view class="list" @click="gofinger">
-			
+			金手指
 		</view>
-		<view class="list" @click="gocs">
+		<!-- <view class="list" @click="gocs">
 			
-		</view>
+		</view> -->
 	</view>
 </template>
 
