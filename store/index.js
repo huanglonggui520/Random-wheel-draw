@@ -93,12 +93,20 @@ const mutations = {
 		
 		state.diceVoice=voice
 		console.log(state.diceVoice);
+	},
+	SETAUTH(state,auth){
+		state.showAuth=auth
+	},
+	SETUSERINFO(state,user){
+		state.userInfo=user
 	}
 }
 //准备state对象——保存具体的数据
 const state = {
 	cfu:true,
+	showAuth:false,//是否登录
 	zdong:true,
+	userInfo:{},
 	theme:0,
 	diceVoice:true,//骰子音效
 	template:[{

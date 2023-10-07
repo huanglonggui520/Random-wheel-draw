@@ -14,7 +14,7 @@
 			</view>
 			
 			<view  @click="set">
-					<uni-icons type="gear" color='#fff' size="40"></uni-icons>
+					<uni-icons type="gear" color='#595858' size="40"></uni-icons>
 			</view>
 		</view>
 		
@@ -65,11 +65,13 @@
 			    })	
 			},
 			start(){
+				console.log(this);
 				let score=0
 				this.scores=0
 				this.animationstrue=''
 				if(this.diceVoice){
-					this.ScanAudio()
+					this.$Audio('ScanAudio')
+					
 				}
 				this.dices=[]
 				let count=0
@@ -147,18 +149,18 @@
 	position: relative;
 	// padding-left: 100rpx;
 	// padding-top: 100rpx;
-	/* background-position: center; */
+	// /* background-position: center; */
 	background-size:100% 100%;
 	 // position: relative;
 	background-repeat:no-repeat;
-	
+	background-position: center;
 	overflow: hidden;
-	background-image: url('https://pic.imgdb.cn/item/63b2d99f5d94efb26f593b4c.jpg');
+	background-image: url('https://pic.imgdb.cn/item/63b818fbbe43e0d30e0fe1a1.jpg');
 }
 
 .scores{
 	
-	color: #fff;
+	color: #595858;
 	font-size: 40rpx
 }
 .add{

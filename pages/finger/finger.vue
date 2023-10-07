@@ -3,7 +3,15 @@
 	<view class="finger" @touchstart='start' @touchend="end" @touchmove.stop.prevent="move">
 
 		<fingers class='fingers' :show='p.show' :bgColor='bgcolor[index]' :zid='p.id' v-for="(p,index) in fingersList"
-			:style="{top:p.y+'rpx',left:p.x+'rpx'}"></fingers>
+			:style="{top:p.y+'rpx',left:p.x+'rpx'}">
+		</fingers>
+		<view class="rule" v-show="showRule">
+			<text>
+				1，每位玩家用手指按住屏幕（最多支持5位玩家）
+				2，等待2秒倒计时结束后听到嘟嘟声开始游戏
+				3，游戏结束后由系统随机选择一位"幸运玩家"
+			</text>
+		</view>
 	</view>
 </template>
 
@@ -17,6 +25,7 @@
 			return {
 				x: 0,
 				y: 0,
+				showRule:true,
 				fingersList: [],
 				ids:[],
 				clear: false,
@@ -25,6 +34,15 @@
 		},
 		components: {
 			fingers
+		},
+		watch:{
+			fingersList(){
+				if(this.fingersList.length){
+					this.showRule=false
+					return
+				}
+				this.showRule=true
+			}
 		},
 		methods: {
 			move(e) {
@@ -71,7 +89,7 @@
 						if(timeid){
 							clearTimeout(timeid)
 						}
-						this.duAudio()//播放开始的嘟嘟声
+						this.$Audio('duAudio')//播放开始的嘟嘟声
 						timeid=setTimeout(() => {
 							who = uni.$u.random(0, e.touches.length-1)
 							this.fingersList.forEach((item, index) => {
@@ -117,7 +135,12 @@
 
 
 	}
-
+    .rule{
+		color: #fff;
+		position: fixed;
+		bottom: 45%;
+		left: 5%;
+	}
 	.finger {
 		height: 100vh;
 		// position: relative;

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "不要点炸弹",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-popup": "/node-modules/uview-ui/components/u-popup/u-popup",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
+    "u-slider": "/node-modules/uview-ui/components/u-slider/u-slider"
+  }
+}

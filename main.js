@@ -4,48 +4,14 @@ import App from './App'
 import Vue from 'vue'
 import uView from "uview-ui";
 import store from './store'
+import mockLocation from 'mock-location';
+Vue.use(mockLocation);
 Vue.use(uView);
 Vue.config.productionTip = false
-var music = null;
-Vue.prototype.stop=function(){
-	if(music!=null){
-		music.stop()
-	}
-}
-Vue.prototype.duAudio = function() {
- 
-    music = uni.createInnerAudioContext(); //创建播放器对象
- 
-    music.src = "/static/12663.mp3";
- 
-    
-	music.play(); //执行执行播放
-	
- 
-    music.onEnded(() => {
- 
-        //音频播放结束
- 
-        music = null;
- 
-});}
-Vue.prototype.ScanAudio = function() {
- 
-    var music = null;
- 
-    music = uni.createInnerAudioContext(); //创建播放器对象
- 
-    music.src = "/static/13019.mp3";
- 
-    music.play(); //执行执行播放
- 
-    music.onEnded(() => {
- 
-        //音频播放结束
- 
-        music = null;
- 
-    });}
+import music from 'utools/music.js'
+// 将声音挂在到Vue
+Vue.prototype.stop=music.stop
+Vue.prototype.$Audio = music.Audio
 App.mpType = 'app'
 const app = new Vue({
     ...App,

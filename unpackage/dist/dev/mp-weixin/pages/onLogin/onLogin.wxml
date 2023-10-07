@@ -1,0 +1,1 @@
+<view><button type="warn" data-event-opts="{{[['tap',[['onlogin',['$event']]]]]}}" bindtap="__e">微信登录</button><button type="warn" data-event-opts="{{[['tap',[['getData',['$event']]]]]}}" bindtap="__e">微录</button>kjh</view>

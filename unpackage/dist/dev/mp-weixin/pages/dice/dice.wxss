@@ -70,14 +70,14 @@ to {
 .dice {
   height: 100vh;
   position: relative;
-  /* background-position: center; */
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-position: center;
   overflow: hidden;
-  background-image: url("https://pic.imgdb.cn/item/63b2d99f5d94efb26f593b4c.jpg");
+  background-image: url("https://pic.imgdb.cn/item/63b818fbbe43e0d30e0fe1a1.jpg");
 }
 .scores {
-  color: #fff;
+  color: #595858;
   font-size: 40rpx;
 }
 .add {

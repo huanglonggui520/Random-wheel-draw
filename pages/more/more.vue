@@ -1,10 +1,28 @@
 <template>
-	<view style="padding: 15rpx;display: flex;justify-content: space-around">
-		<view class="list"@click='godice'>
-			掷骰子
+	<view class="more">
+		<view class="list"@click='godice' style="background-color: #EC9B15;">
+			<view>掷骰子</view>
+			<view style="font-size: 30rpx;margin-top: 10rpx;">比一比谁的骰子点数大</view>
 		</view>
-		<view class="list" @click="gofinger">
-			金手指
+		<view class="list" @click="gofinger" style="background-color: #07E832;">
+			<view>指尖轮盘</view>
+			<view style="font-size: 30rpx;margin-top: 10rpx;">比一比手气</view>
+		</view>
+		<view class="list" @click="goNum" style="background-color: #08BCDB;">
+			<view>生成随机数</view>
+			<view style="font-size: 30rpx;margin-top: 10rpx;">不知道选哪个数字?我来帮你</view>
+		</view>
+		<view class="list" @click="goBall" style="background-color: #DB4A08;">
+			<view>不要点炸弹</view>
+			<view style="font-size: 30rpx;margin-top: 10rpx;">看谁先点到炸弹</view>
+		</view>
+		<view class="list" @click="goLogin" style="background-color: #DB4A08;">
+			<view>微信登录</view>
+			<view style="font-size: 30rpx;margin-top: 10rpx;">看谁先点到炸弹</view>
+		</view>
+		<view class="list" @click="goonLogin" style="background-color: #DB4A08;">
+			<view>微信登录</view>
+			<view style="font-size: 30rpx;margin-top: 10rpx;">看谁先点到炸弹</view>
 		</view>
 		<!-- <view class="list" @click="gocs">
 			
@@ -20,6 +38,7 @@
 			}
 		},
 		methods: {
+			
 			godice(){
 				uni.navigateTo({
 					url:'/pages/dice/dice'
@@ -34,6 +53,26 @@
 				uni.navigateTo({
 					url:"/pages/cs/cs"
 				})
+			},
+			goNum(){
+				uni.navigateTo({
+					url:"/pages/randomNum/randomNum"
+				})
+			},
+			goBall(){
+				uni.navigateTo({
+					url:"/pages/ball/ball"
+				})
+			},
+			goLogin(){
+				uni.navigateTo({
+					url:'/pages/wxLogin/wxLogin'
+				})
+			},
+			goonLogin(){
+				uni.navigateTo({
+					url:'/pages/onLogin/onLogin'
+				})
 			}
 		}
 	}
@@ -41,9 +80,21 @@
 
 <style>
 .list{
-	width: 46%;
-	height: 250rpx;
+	width: 48%;
+	height: 170rpx;
+	color: #fff;
+	margin-top: 20rpx;
 	background-color: red;
-	border-radius: 10rpx;
+	padding: 20rpx;
+	box-sizing: border-box;
+	font-size: 35rpx;
+	border-radius: 20rpx;
+}
+.more{
+	
+	padding: 15rpx;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 </style>

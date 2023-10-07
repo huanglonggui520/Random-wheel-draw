@@ -6,7 +6,7 @@
 		</view>
 		<view style="background-color: #fff;">
 			<u-cell-group>
-				<u-cell title="应用主题" :isLink="true" @click='gochoicebg'></u-cell>
+				<u-cell  title="应用主题" :isLink="true" @click='gochoicebg'></u-cell>
 				<u-cell title="转盘触感">
 					<u-switch slot="right-icon" @change='changezdong' size='20' inactiveColor='#F3F3F3'
 						activeColor='#FF9900' v-model="zdong"></u-switch>

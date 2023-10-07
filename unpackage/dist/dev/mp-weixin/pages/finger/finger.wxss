@@ -27,6 +27,12 @@
 .fingers {
   position: fixed;
 }
+.rule {
+  color: #fff;
+  position: fixed;
+  bottom: 45%;
+  left: 5%;
+}
 .finger {
   height: 100vh;
   background-color: #000;

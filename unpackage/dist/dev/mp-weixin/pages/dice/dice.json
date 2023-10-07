@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "掷骰子",
   "enablePullDownRefresh": false,
   "disableScroll": true,
   "usingComponents": {

@@ -9,7 +9,11 @@
     "pages/dice/dice",
     "pages/diceSet/diceSet",
     "pages/finger/finger",
-    "pages/cs/cs"
+    "pages/cs/cs",
+    "pages/randomNum/randomNum",
+    "pages/ball/ball",
+    "pages/wxLogin/wxLogin",
+    "pages/onLogin/onLogin"
   ],
   "subPackages": [],
   "window": {

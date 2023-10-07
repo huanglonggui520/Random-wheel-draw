@@ -1,8 +1,20 @@
 
 .list{
-	width: 46%;
-	height: 250rpx;
+	width: 48%;
+	height: 170rpx;
+	color: #fff;
+	margin-top: 20rpx;
 	background-color: red;
-	border-radius: 10rpx;
+	padding: 20rpx;
+	box-sizing: border-box;
+	font-size: 35rpx;
+	border-radius: 20rpx;
+}
+.more{
+	
+	padding: 15rpx;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 

@@ -1,7 +1,7 @@
 <template>
 	<view>
 
-		<u-cell-group>
+		<u-cell-group style="background-color: #fff;">
 			<u-cell title="骰子个数" :value="diceNum" :isLink="true" @click="show = true"></u-cell>
 			<u-cell title="音效">
 				<u-switch  slot="right-icon" size='20' inactiveColor='#F3F3F3'

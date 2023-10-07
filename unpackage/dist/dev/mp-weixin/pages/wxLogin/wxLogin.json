@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "随机小决定",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "avatar": "/components/avatar/avatar"
+  }
+}

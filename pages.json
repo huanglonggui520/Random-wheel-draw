@@ -14,7 +14,7 @@
             "path" : "pages/more/more",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "更多功能",
                 "enablePullDownRefresh": false
             }
             
@@ -61,7 +61,7 @@
             "path" : "pages/dice/dice",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "掷骰子",
                 "enablePullDownRefresh": false,
 				"disableScroll": true
             }
@@ -87,6 +87,43 @@
         }
         ,{
             "path" : "pages/cs/cs",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+       
+        ,{
+            "path" : "pages/randomNum/randomNum",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "随机数",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/ball/ball",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "不要点炸弹",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/wxLogin/wxLogin",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "随机小决定",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/onLogin/onLogin",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

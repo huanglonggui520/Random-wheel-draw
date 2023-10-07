@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "随机数",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-line": "/node-modules/uview-ui/components/u-line/u-line",
+    "u-switch": "/node-modules/uview-ui/components/u-switch/u-switch",
+    "u--input": "/node-modules/uview-ui/components/u--input/u--input",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button"
+  }
+}

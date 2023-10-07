@@ -1,6 +1,6 @@
 <template>
 	<view class="index" :class="theme?'indexbj1':'indexbj2'">
-		
+		<login></login>
 		<view class="set">
 			
 			<uni-icons type="gear" color="#fff" size="26" @click="goset"></uni-icons>
